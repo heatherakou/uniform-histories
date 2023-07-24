@@ -4,7 +4,7 @@
 # THEME. Leave Lines 4-6 alone.
 #---------------------
 remote_theme: kalanicraig/community-archive-jekyll
-repository: 'idahatiu/idahatiu.github.io' # change this to your repository name
+repository: 'heatherakou/uniform-histories.github.io' # change this to your repository name
 
 ##############################################
 # WHAT IS ALL THIS STUFF?
@@ -42,18 +42,18 @@ repository: 'idahatiu/idahatiu.github.io' # change this to your repository name
 #---------------------
 
 # Title of your website
-title: "IDAH@IU"
+title: "Uniform Histories"
 
 # Subtitle of your website. Leave blank if you want to.
-subtitle: "An Archive of Our Community's Heirlooms"
+subtitle: ""
 
 # A longer description of your site (max 150 words). Helps search engines find you.
 description: "Community Archiving Site"
 
 # These credits show up in the includes/_footer.html
 # Main author of the website.
-author: "IDAH@IU"
-authorname : "Institute for Digital Arts and Humanities"
+author: "Heather Akou"
+authorname : ""
 sitelogo: "site_logo.jpg"
 
 # What year did you start up this community project?
