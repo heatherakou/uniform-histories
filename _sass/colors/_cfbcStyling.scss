@@ -1,0 +1,34 @@
+// 1- Main text color and nav-bar background color
+// 2- Link and highlight color
+// 3- Main background color
+// 4- Accent background color
+// 5- Link-hover color and footer-link color
+
+/* SCSS HEX */
+$delft_blue: #323950;
+$blue_munsell: #2D8091;
+$seasalt: #FAFAFA;
+$pistachio: #A9CA85;
+$fern_green: #4A6E2E;
+
+/** main color scheme **/
+$main-text-color: $delft_blue;
+$main-bg: $seasalt;
+$main-link: $blue_munsell;
+$main-link-hover: $fern_green;
+$main-headers: $seasalt;
+
+/** dark-background color scheme **/
+$dark-text-color: $seasalt;
+$dark-bg: $fern_green;
+$dark-link: $pistachio;
+$dark-link-hover: $blue_munsell;
+$dark-headers: $pistachio;
+
+/** accent-background color scheme **/
+$accent-text-color: $delft_blue;
+$accent-bg: $pistachio;
+$accent-link: $fern_green;
+$accent-link-hover: $blue_munsell;
+$accent-headers: $fern_green;
+
