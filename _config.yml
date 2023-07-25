@@ -45,7 +45,7 @@ repository: 'heatherakou/uniform-histories.github.io' # change this to your repo
 title: "Uniform Histories"
 
 # Subtitle of your website. Leave blank if you want to.
-subtitle: ""
+subtitle: "hello"
 
 # A longer description of your site (max 150 words). Helps search engines find you.
 description: "Community Archiving Site"
@@ -94,8 +94,8 @@ fontchoice: slab # A funky slab font with clean sans-serif accents
 #colorchoice: navy # Navy with bright teal and grey
 #colorchoice: leafgreen # Leafy green and medium brown
 #colorchoice: tan # Tan and deep brown with flame-bright orange
-#colorchoice: teal # Bright teal with bright orange-yellow accents
-colorchoice: marigold # Near-black with marigold yellow
+colorchoice: teal # Bright teal with bright orange-yellow accents
+#colorchoice: marigold # Near-black with marigold yellow
 #colorchoice: red # Black, crimson and grey
 #colorchoice: lavenderred # Purple-grey with orange-red
 #colorchoice: dusk # Dusky purple and olive green
