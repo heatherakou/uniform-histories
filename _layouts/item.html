@@ -20,40 +20,34 @@ format: item
 	{% endfor %}
 {% endif %}
 
-
 {% if page.embedurl %}
 <div class="responsive-embed">
-  <iframe width="420" height="315" src="{{ page.embedurl }}" frameborder="0" allowfullscreen></iframe>
+<iframe width="420" height="315" src="{{ page.embedurl }}" frameborder="0" allowfullscreen></iframe>
 </div>
 {% elsif ItemPhotoResult %}
-<img class="article-image float-right thumbnail" src="{{ ItemPhotoResult }}" alt="{{ page.title }}""/>{% endif %}
+<div class="large reveal" id="itemImage" data-reveal>
+<img src="{{ ItemPhotoResult }}" alt="{{ page.title }}"/>
+<p><button class="close-button" data-close aria-label="Close modal" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button></p>
+</div>
 
-{% if page.contributor %}<h2>Object contributed by {{ page.contributor }}</h2>{% endif %}
+<div class="flexible-article-image-right">
+<div class="thumbnail" markdown="1" >
+<button class="button button-img" data-open="itemImage"><img src="{{ ItemPhotoResult }}" alt="{{ page.title }}"/>
+</div>
+</div>
 
-{% if page.contributorquote %}<q class="pull-quote">"{{ page.contributorquote }}"</q>{% endif %}
+{% endif %}
+{% if page.shortdesc %}
 
-{% if page.creator %}<h4>Originally created by {{ page.creator }}</h4>{% endif %}
+<h2>About {{page.title}}</h2>
 
-{% if page.externalurl %}<p>Find out more at {{ page.externalurl }}{% endif %}
+<p>{{page.shortdesc}}</p>
 
-{% if page.embedurl %}<p>EMBED ME {{ page.embedurl }}{% endif %}
-
-{% if page.format == "media" %}<p>{{ page.embedurl }}{% endif %}
-
-{% if page.teammember %}<p>Assistance collecting this object by {{ page.teammember }}</p>{% endif %}
+{% endif %}
 
 {{ content }}
-
-{% capture ItemImagePath %}{{ urlitemimg }}{{ ItemID }}{% endcapture %}
-{% for static_file in site.static_files %}
-{% if static_file.path contains ItemImagePath %}
-{% unless static_file.path contains '_th' %}
-{% capture ItemPhotoResult %}{{site.baseurl}}{{static_file.path}}{% endcapture %}
-<img class="featured-image img-fluid" src="{{ ItemPhotoResult }}" alt="{{ page.title }}">
-{% endunless %}
-{% endif %}
-{% endfor %}
-
 
 <div class="element-set">
 <h2 id="Dublin Core">More about this item</h2>
