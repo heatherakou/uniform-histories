@@ -1,0 +1,43 @@
+.button-img {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+}
+
+.button, .button.disabled, .button[disabled], .button.disabled:hover, .button[disabled]:hover, .button.disabled:focus, .button[disabled]:focus {
+    background-color: $dark-bg;
+    color: $dark-text-color;
+}
+
+.button:hover, .button:focus {
+    background-color: $accent-bg;
+    color: $accent-text-color;
+}
+
+.flexible-article-image-right {
+  float: right;
+  margin: 0 0 1rem 1.5rem;
+  max-width: 30%;
+}
+
+.flexible-article-image-right .caption {
+  font-size: 0.9rem;
+}
+
+#itemImage {
+   max-width: 40%;
+}
+
+@media screen and (max-width: 39.9375em) {
+  .flexible-article-image-right {
+    float: right;
+    max-width: 40%;
+    margin: 0;
+  }
+  .flexible-article-image-right .thumbnail {
+    width: 40%;
+  }
+  .flexible-article-image-right .thumbnail img {
+    width: 40%;
+  }
+}
