@@ -383,7 +383,7 @@ Typographic & Design Elements
 		color: $dark-text-color;
 	}
 
-.mission-statement {
+.pull-quote {
   font-weight: 400;
   letter-spacing: 1.25px;
   font-style: normal;
@@ -397,23 +397,23 @@ Typographic & Design Elements
   padding-left: 10px;
 }
 
-.mission-statement:before {
+.pull-quote:before {
   content: '';
 }
 
-.mission-statement:after {
+.pull-quote:after {
   content: '';
 }
 
 @media print, screen and (min-width: 40em) {
-  .mission-statement {
+  .pull-quote {
     font-size: 1.875rem;
     max-width: calc(50% - 15%);
   }
 }
 
 @media print, screen and (min-width: 64em) {
-  .mission-statement {
+  .pull-quote {
     max-width: calc(50% + 5%);
   }
 }
