@@ -2,7 +2,7 @@
 title: Uniform Histories
 layout: homepage
 permalink: /
-pullquote: this is a quote
+pullquote: "this is a quote"
 quoteattribution: person
 ---
 
