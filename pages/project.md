@@ -4,6 +4,8 @@ layout: page
 permalink: /project
 ---
 
+by morgan
+
 Once created, the digital history of the Clarence Fitzroy Bryant College can also serve as a
 research repository that can be used to map the contributions of the CFBCC, its faculty, officers,
 and alumni to the social, cultural and economic development of the Federation of St. Kitts and
