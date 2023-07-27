@@ -45,10 +45,10 @@ repository: 'heatherakou/uniform-histories.github.io' # change this to your repo
 title: "Uniform Histories"
 
 # Subtitle of your website. Leave blank if you want to.
-subtitle: "hello"
+subtitle: "History of Uniforms in the United States"
 
 # A longer description of your site (max 150 words). Helps search engines find you.
-description: "Community Archiving Site"
+description: "A Virtual Museum and Repository"
 
 # These credits show up in the includes/_footer.html
 # Main author of the website.
@@ -57,14 +57,14 @@ authorname : ""
 sitelogo: "site_logo.jpg"
 
 # What year did you start up this community project?
-sitedate : 2022
+sitedate : 2023
 
 # Other community social media. Leave blank if you don't have these.
-email : "idah [at] iu.edu"
-website : "https://idah.indiana.edu/"
-twitter : "IDAH_IU"
-github : "idahatiu"
-facebook : "idahatiu"
+email : "hakou [at] iu.edu"
+website : "https://www.heatherakou.net/"
+twitter : 
+github : "heatherakou"
+facebook : 
 instagram : 
 
 # If you need to know how many people visit your site, go to https://analytics.google.com/
