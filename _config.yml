@@ -127,7 +127,7 @@ collections:
 #    folder: true
 #    sort_by: folder
   authors:
-    output: false
+    output: true
     name: true
 
 ##############################################

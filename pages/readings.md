@@ -1,5 +1,5 @@
 ---
 title: Readings
-layout: stories
+layout: page
 permalink: /readings
 ---
