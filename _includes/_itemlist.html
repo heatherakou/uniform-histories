@@ -1,3 +1,5 @@
 {% for item in site.items %}
-{% include _itembox.html %}
+  {% if item.group == "artifact" %}
+    {% include _itembox.html %}
+  {% endif %}
 {% endfor %}

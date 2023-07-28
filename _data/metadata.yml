@@ -1,0 +1,35 @@
+# Input a string for each variable under displayvalues if you would like to change how that value is labeled when displayed.
+# You can create your own metadata attributes by following the model below. Note that any new groups will require modification of the html layout for items in order to display correctly.
+fields: 
+  layout:
+  format:
+  title:
+  contributor:
+  creator:
+  group:
+  creationdate: 
+  shortdesc:
+  copyright:
+  categories:
+  medium:
+  demographics:
+  time:
+  tags:
+  teammember:
+
+displayvalues: 
+  layout:
+  format:
+  title: "Name of work"
+  contributor: "Archive contributor"
+  creator: "Work creator"
+  group:
+  creationdate:
+  shortdesc: "Description of image"
+  copyright: "CC BY-NC 4.0"
+  categories: [  ]
+  medium: [  ]
+  demographics: [  ]
+  time: [  ]
+  tags: [  ]
+  teammember:
