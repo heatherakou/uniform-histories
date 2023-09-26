@@ -30,6 +30,4 @@
 	</div>
 	{% endif %}
   <h3 class="card-title accentbg"><a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a></h3>
-  {%if item.contributor %}<h4 class="card-contributor">{{ item.contributor }}</h4>{% endif %}
-  <p class="card-desc">{{ item.shortdesc | strip_html | truncatewords:30 }} (<a href="{{ site.baseurl }}{{ item.url }}">read more...</a>)</p>
 </div>
