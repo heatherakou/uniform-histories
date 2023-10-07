@@ -147,7 +147,7 @@ baseurl:
 # Markdown-Example for posts ![Image Text]({{ site.url }}{{ site.baseurl }}{{ site.urlimg }}image.jpg)
 #
 urlimg: '/assets/img/'
-urlitemimg: '/assets/items/'
+urlitem: '/assets/items/'
 permalink: /:categories/:year/:month/:day/:title:output_ext
 
 markdown : kramdown

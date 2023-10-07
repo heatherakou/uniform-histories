@@ -5,7 +5,7 @@ format: stories
 
 {% assign grouplist = "" | split: ',' %}
 {% for item in site.items %}
-    {% if item.group == "reading" %}{% assign grouplist = grouplist | push: item.group %}{%endif%}
+    {% if item.group == 'reading' %}{% assign grouplist = grouplist | push: item.group %}{%endif%}
 {% endfor %}
 
 {% assign uniquegroups = grouplist | uniq %}
