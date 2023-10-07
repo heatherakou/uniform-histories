@@ -17,7 +17,7 @@
 .flexible-article-image-right {
   float: right;
   margin: 0 0 1rem 1.5rem;
-  max-width: 40%;
+  max-width: 30%;
 }
 
 .flexible-article-image-right .caption {
@@ -25,7 +25,7 @@
 }
 
 #itemImage {
-   max-width: 40%;
+   max-width: 100%
 }
 
 @media screen and (max-width: 39.9375em) {
