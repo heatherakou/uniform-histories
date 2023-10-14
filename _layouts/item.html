@@ -9,9 +9,7 @@ format: item
 		<div class="large-12 cell">
 			<!--page-->
 
-{% if item.photo %}
-		{% assign ItemResult = item.photo %}
-	{% else %}
+{% if item.layout == item %}
 		{% capture ItemPath %}{{ ItemID }}{% endcapture %}
 		{% for static_file in site.static_files %}
 			{% if static_file.path contains ItemPath %}
