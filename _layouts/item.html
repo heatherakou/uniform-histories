@@ -20,11 +20,8 @@ format: item
 		{% endfor %}
 	{% endif %}
 
-{% if page.embedurl %}
-<div class="responsive-embed">
-<iframe width="420" height="315" src="{{ page.embedurl }}" frameborder="0" allowfullscreen></iframe>
-</div>
-{% elsif ItemResult %}
+
+{% if ItemResult %}
 <div class="large reveal" id="itemImage" data-reveal>
 <embed src="{{ ItemResult }}" alt="{{ page.title }}">
 <p><button class="close-button" data-close aria-label="Close modal" type="button">
@@ -33,12 +30,13 @@ format: item
 </div>
 
 <div class="flexible-article-image-right">
-<div class="thumbnail" markdown="1" >
-<button class="button button-img" data-open="itemImage"><img src="{{ ItemResult }}" alt="{{ page.title }}"/>
+	<div class="thumbnail" markdown="1" >
+		<button class="button button-img" data-open="itemImage">
+		<img src="{{ ItemResult }}" alt="Click to View Document"/>
+	</div>
 </div>
-</div>
-
 {% endif %}
+
 {% if page.shortdesc %}
 
 <h2>About {{page.title}}</h2>
