@@ -45,19 +45,9 @@ format: item
 </div>
 {% endif %}
 
-{% if ReadingResult %}
-
-<div class="flexible-article-image-right">
-	<div class="thumbnail" markdown="1" >
-		<button class="button button-img" data-open="itemImage">
-		<embed src="{{ ReadingResult }}" alt="Click to View Document">
-	</div>
-</div>
-{% endif %}
-
 {% if page.shortdesc %}
 
-<h2>About {{page.title}}</h2>
+<h2>About</h2>
 
 <p>{{page.shortdesc}}</p>
 
@@ -80,3 +70,11 @@ format: item
 		</div>
 	</div>
 </div>
+
+{% if ReadingResult %}
+
+<div>
+	<embed src="{{ ReadingResult }}" alt="Click to View Document" width="100%" height="1300vh">
+</div>
+
+{% endif %}
