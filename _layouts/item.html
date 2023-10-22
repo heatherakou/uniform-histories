@@ -4,18 +4,28 @@ format: item
 ---
 {% capture FileName %}{{ page.url | split: '/' | last }}{% endcapture %}
 {% capture ItemID %}{{ FileName | split: '.' | first }}{% endcapture %}
+
 <div class="grid-container">
 	<div class="grid-x grid-padding-x">
 		<div class="large-12 cell">
 			<!--page-->
 
-{% if item.layout == item %}
+{% if item.format == item %}
 		{% capture ItemPath %}{{ ItemID }}{% endcapture %}
-		{% for static_file in site.static_files %}
-			{% if static_file.path contains ItemPath %}
-				{% capture ItemResult %}{{site.baseurl}}{{static_file.path}}{% endcapture %}
-			{% endif %}
-		{% endfor %}
+		{% if ItemPath contains 'artifact' %}
+			{% for static_file in site.static_files %}
+				{% if static_file.path contains ItemPath %}
+					{% capture ItemResult %}{{site.baseurl}}{{static_file.path}}{% endcapture %}
+				{% endif %}
+			{% endfor %}
+		{% endif %}
+		{% if ItemPath contains 'reading' %}
+			{% for static_file in site.static_files %}
+				{% if static_file.path contains ItemPath %}
+					{% capture ReadingResult %}{{site.baseurl}}{{static_file.path}}{% endcapture %}
+				{% endif %}
+			{% endfor %}
+		{% endif %}
 	{% endif %}
 
 
@@ -31,6 +41,16 @@ format: item
 	<div class="thumbnail" markdown="1" >
 		<button class="button button-img" data-open="itemImage">
 		<img src="{{ ItemResult }}" alt="Click to View Document"/>
+	</div>
+</div>
+{% endif %}
+
+{% if ReadingResult %}
+
+<div class="flexible-article-image-right">
+	<div class="thumbnail" markdown="1" >
+		<button class="button button-img" data-open="itemImage">
+		<embed src="{{ ReadingResult }}" alt="Click to View Document">
 	</div>
 </div>
 {% endif %}
