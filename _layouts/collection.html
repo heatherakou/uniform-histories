@@ -11,18 +11,15 @@ format: collection
 {% assign uniquegroups = grouplist | uniq %}
 
 {% assign grouplist = "" | split: ',' %}
-{% for item in site.items %}
-    {% if item.group %}{% assign grouplist = grouplist | push: item.group %}{%endif%}
-{% if item.categories %}
-{% for cat in item.categories %}
-{% assign catdash = cat | replace: " ", "-" %}
-{% assign grouplist = grouplist | push: catdash %}
-{% endfor %}
-{%endif%}
-{% endfor %}
-
+	{% for item in site.items %}
+		{% if item.categories %}
+			{% for cat in item.categories %}
+				{% assign catdash = cat | replace: " ", "-" %}
+				{% assign grouplist = grouplist | push: catdash %}
+			{% endfor %}
+		{%endif%}
+	{% endfor %}
 {% assign uniquetags = grouplist | uniq %}
-
 
 </div>
 
