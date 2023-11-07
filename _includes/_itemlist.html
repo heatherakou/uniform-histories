@@ -1,5 +1,247 @@
+<!-- ******************************************** -->
 {% for item in site.items %}
   {% if item.group == "reading" %}
     {% include _itembox.html %}
   {% endif %}
 {% endfor %}
+<!-- ******************************************** -->
+
+<!-- DEV NOTES:
+This multi-filtering system currently uses the 'type' and 'category' fields.
+See lines 85-90ish for changing the 'and' 'or' logic of the filters
+Chance which property is accessed & used in the filters in lines 13-18 & 20-25. -->
+
+<!-- DEFINE CATLIST -->
+<!-- creates variables called allCats/allFormats and assigns it as an empty string that's' split (using comma as delimeter) into an array -->
+{% assign allCats = "" | split: ',' %}
+{% assign allFormats = "" | split: ',' %}
+
+<!--BEGIN ITEM ASSIGNMENT LOOP-->
+{% for item in site.items %}
+
+<!-- BUILDING CATEGORY LIST-->
+<!-- gets all the categories from the uploaded items -->
+{% if item.categories %}
+{% for cat in item.categories %}
+{% assign allCats = allCats | push: cat %}
+{% endfor %}
+{% endif %}
+
+<!-- BUILDING TYPE LIST-->
+<!-- gets all the formats from the uploaded items -->
+{% if item.format %}
+{% for format in item.format %}
+{% assign allFormats = allFormats | push: format %}
+{% endfor %}
+{% endif %}
+
+{% endfor %}
+<!-- END ITEM ASSIGNMENT LOOP-->
+
+<!-- MAKE filter lists UNIQUE -->
+<!-- makes new arrays without repeating categories/formats -->
+{% assign uniqueCategories = allCats | uniq %}
+{% assign uniqueFormats = allFormats | uniq %}
+
+<div id="filter-container">
+    <!-- Filter Buttons (Left) -->
+    <div id="buttons-container">
+        <!-- creates all the filter buttons for the categories in uniqueCategories array -->
+        {% for category in uniqueCategories %}
+        <button class="filter-button" data-category="{{ category }}">{{ category }}</button>
+        {% endfor %}
+    </div>
+
+    <!-- Checkbox List (Right) -->
+    <div id="filter-checkboxes">
+        <!-- creates all the checkboxes for the formats in uniqueFormats array -->
+        {% for format in uniqueFormats %}
+        <div class="checkbox-wrapper">
+            <input type="checkbox" data-format="{{ format }}" id="checkbox-{{ forloop.index }}" />
+            <label for="checkbox-{{ forloop.index }}">{{ format }}</label>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+<div id="item-container">
+    {% for item in site.items %}
+    {% include _itembox.html %}
+    {% endfor %}
+</div>
+
+<script>
+    // JavaScript to handle filtering
+
+    // array of filter buttons
+    const filterButtons = document.querySelectorAll('.filter-button');
+
+    // array of checkboxes
+    const filterCheckboxes = document.querySelectorAll('.checkbox-wrapper input[type="checkbox"]'); // Update the selector here
+
+    // not sure what this is getting... where does the class filter-item come in? **************************************
+    const itemCards = document.querySelectorAll('.filter-item');
+
+    function filterItems() {
+        // array stores the data-categroy values of the buttons that are active
+        const selectedCategories = Array.from(filterButtons)
+            // stores all the buttons that are active (aka have "active" class)
+            .filter(button => button.classList.contains('active'))
+            // stores the data-category values of each button in an array
+            .map(button => button.dataset.category);
+
+        // array stores the data-format values of the checkboxes that are checked
+        const selectedFormats = Array.from(filterCheckboxes)
+            // stores all the checkboxes that are checked (aka have "checked" attribute)
+            .filter(checkbox => checkbox.checked)
+            // stores the data-format values of each checkbox in an array
+            .map(checkbox => checkbox.dataset.format);
+
+        itemCards.forEach(card => {
+            const itemCategories = card.dataset.categories.split(',');
+            const itemFormats = card.dataset.formats.split(',');
+
+            // showAll is true if there are no elements in selectedCategories and selectedFormats
+            const showAll = selectedCategories.length === 0 && selectedFormats.length === 0;
+            // showCat is true if at least one category in selectedCategories = a category in itemCategories
+            const showCat = selectedCategories.some(category => itemCategories.includes(category));
+            // showForm is true if at least one format in selectedFormats = a format in itemFormats
+            const showForm = selectedFormats.some(format => itemFormats.includes(format));
+
+            const isPerson = selectedFormats.some(format => itemFormats.includes('person'));
+
+            // WANT TO CHANGE HOW THE FILTERS INTERACT? (I.E. AND vs OR) CHANGE THE LINE BELOW (change || to && to mean "and")
+            // if showCat, showForm, OR showAll is true, displays the item card
+            if ((showCat || showForm || showAll)) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+        });
+    }
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            button.classList.toggle('active');
+            filterItems();
+        });
+    });
+
+    filterCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+            filterItems();
+        });
+    });
+</script>
+
+<!-- /* Style the filter container */ -->
+<style>
+    #filter-container {
+        display: flex;
+        justify-content: center;
+        flex: content;
+        width: 100%;
+        padding-bottom: 20px;
+        padding-top: 20px;
+    }
+
+    /* Style the tiles */
+    #item-container {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(300px, 1fr)); /* Set three equal-width columns */
+        gap: 20px;
+        justify-items: center;
+    }
+</style>
+
+<!-- /* Style the filter buttons */ -->
+<style>
+    /* Style the filter buttons */
+    #buttons-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        width: 75%;
+        justify-content: space-evenly; /* Align buttons to the center */
+    }
+
+    .filter-button {
+        background-color: #2D8091;
+        /* Blue Munsell */
+        color: #FAFAFA;
+        /* Seasalt */
+        border: none;
+        border-radius: 5px;
+        padding: 4px 12px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        display: flex;
+        align-items: center; /* Center button text vertically */
+    }
+
+    .filter-button:hover {
+        background-color: #4A6E2E;
+        /* Fern Green */
+    }
+
+    .filter-button.active {
+        background-color: #4A6E2E;
+        /* Fern Green */
+    }
+</style>
+
+<!-- /* Checkbox style */ -->
+<style>
+
+    .filter-checkboxes {
+       max-width: 25%;
+    }
+
+    .checkbox-wrapper input[type="checkbox"] {
+        display: none;
+        visibility: hidden;
+    }
+
+    .checkbox-wrapper label {
+        position: relative;
+        padding-left: 2em;
+        padding-right: 1em;
+        line-height: 2;
+        cursor: pointer;
+        display: inline-flex;
+    }
+
+    .checkbox-wrapper label:before {
+        box-sizing: border-box;
+        content: " ";
+        position: absolute;
+        top: 0.3em;
+        left: 0;
+        display: block;
+        width: 1.4em;
+        height: 1.4em;
+        border: 2px solid #9098A9;
+        border-radius: 6px;
+        z-index: -1;
+    }
+
+    .checkbox-wrapper input[type=checkbox]:checked + label {
+        padding-left: 1em;
+        color: #0f5229;
+    }
+
+    .checkbox-wrapper input[type=checkbox]:checked + label:before {
+        top: 0;
+        width: 100%;
+        height: 2em;
+        background: #b7e6c9;
+        border-color: #2cbc63;
+    }
+
+    .checkbox-wrapper label,
+    .checkbox-wrapper label::before {
+        transition: 0.25s all ease;
+    }
+</style>
