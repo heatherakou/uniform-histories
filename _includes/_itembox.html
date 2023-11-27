@@ -2,11 +2,11 @@
 {% capture ItemID %}{{ FileName | split: '.' | first }}{% endcapture %}
 
 {% assign catlist = "" | split: ',' %}
-{% if item.categories %}
-{% for cat in item.categories %}
-{% assign catdash = cat | replace: " ", "-" %}
-{% assign catlist = catlist | push: catdash %}
-{% endfor %}
+	{% if item.categories %}
+		{% for cat in item.categories %}
+			{% assign catdash = cat | replace: " ", "-" %}
+			{% assign catlist = catlist | push: catdash %}
+		{% endfor %}
 {% assign uniquetags = catlist | uniq %}
 {%endif%}
 
