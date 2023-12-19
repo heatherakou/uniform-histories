@@ -40,7 +40,11 @@ format: item
 <div class="flexible-article-image-right">
 	<div class="thumbnail" markdown="1" >
 		<button class="button button-img" data-open="itemImage">
+		{% if ItemResult contains ".pdf" %}
+		<embed src="{{ ItemResult }}" alt="Click to View Document"/>
+		{% else %}
 		<img src="{{ ItemResult }}" alt="Click to View Document"/>
+		{% endif %}
 	</div>
 </div>
 {% endif %}
