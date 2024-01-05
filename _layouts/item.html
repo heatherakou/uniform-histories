@@ -15,6 +15,18 @@ format: item
 			{% for static_file in site.static_files %}
 				{% if static_file.path contains ItemPath %}
 					{% capture ItemResult %}{{site.baseurl}}{{static_file.path}}{% endcapture %}
+					<div class="flexible-article-image-right">
+						<div class="thumbnail" markdown="1" >
+							<button class="button button-img" data-open="itemImage">
+							<img src="{{ ItemResult }}" alt="Click to View Document"/>
+						</div>
+						<div class="large reveal" id="itemImage" data-reveal>
+							<embed src="{{ ItemResult }}" alt="{{ page.title }}">
+							<p><button class="close-button" data-close aria-label="Close modal" type="button">
+							<span aria-hidden="true">&times;</span>
+							  </button></p>
+						</div>
+					</div>
 				{% endif %}
 			{% endfor %}
 		{% endif %}
@@ -26,27 +38,6 @@ format: item
 			{% endfor %}
 		{% endif %}
 	{% endif %}
-
-
-{% if ItemResult %}
-<div class="large reveal" id="itemImage" data-reveal>
-<embed src="{{ ItemResult }}" alt="{{ page.title }}">
-<p><button class="close-button" data-close aria-label="Close modal" type="button">
-    <span aria-hidden="true">&times;</span>
-  </button></p>
-</div>
-
-<div class="flexible-article-image-right">
-	<div class="thumbnail" markdown="1" >
-		<button class="button button-img" data-open="itemImage">
-		{% if ItemResult contains ".pdf" %}
-		<embed src="{{ ItemResult }}" alt="Click to View Document"/>
-		{% else %}
-		<img src="{{ ItemResult }}" alt="Click to View Document"/>
-		{% endif %}
-	</div>
-</div>
-{% endif %}
 
 {% if page.shortdesc %}
 
@@ -81,13 +72,3 @@ format: item
 </div>
 
 {% endif %}
-
-{% capture ItemImagePath %}{{ urlitemimg }}{{ ItemID }}{% endcapture %}
-{% for static_file in site.static_files %}
-{% if static_file.path contains ItemImagePath %}
-{% unless static_file.path contains '_th' %}
-{% capture ItemPhotoResult %}{{site.baseurl}}{{static_file.path}}{% endcapture %}
-<img class="featured-image img-fluid" src="{{ ItemPhotoResult }}" alt="{{ page.title }}">
-{% endunless %}
-{% endif %}
-{% endfor %}
