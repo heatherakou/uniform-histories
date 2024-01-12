@@ -15,17 +15,18 @@ format: item
 			{% for static_file in site.static_files %}
 				{% if static_file.path contains ItemPath %}
 					{% capture ItemResult %}{{site.baseurl}}{{static_file.path}}{% endcapture %}
+					{% capture divID %}{{ ItemResult | split: "/" | last | split: "." | first }}{% endcapture %}
 					<div class="flexible-article-image-right">
 						<div class="thumbnail" markdown="1" >
-							<button class="button button-img" data-open="itemImage">
+							<button class="button button-img" data-open="{{ divID }}">
 							<img src="{{ ItemResult }}" alt="Click to View Document"/>
 						</div>
-						<div class="large reveal" id="itemImage" data-reveal>
+						<div class="large reveal" id="{{ divID }}" data-reveal>
 							<embed src="{{ ItemResult }}" alt="{{ page.title }}">
 							<p><button class="close-button" data-close aria-label="Close modal" type="button">
 							<span aria-hidden="true">&times;</span>
 							  </button></p>
-						</div>
+						</div> 
 					</div>
 				{% endif %}
 			{% endfor %}
