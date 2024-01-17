@@ -21,6 +21,13 @@ Please note that some items on this website are still under copyright and are be
 
 This project is an outgrowth of my research including my book, On the Job: A History of American Work Uniforms (forthcoming with Bloomsbury Academic in February 2024). You can read more about my background on my [author platform](heatherakou.net) and access many of my publications through [ResearchGate](https://www.researchgate.net/profile/Heather-Akou). My current research is about entanglements between military uniforms and non-military dress/fashion, including how military uniforms have inspired subcultures such as militant secret societies, military-style marching bands, military schools, rap artists, and political extremists. 
 
-<img src="assets/img/cover.jpg" alt="On the Job Cover Image" style="width:350px">
+<div style="display:flex;">
+<img src="assets/img/cover.jpg" alt="On the Job Cover Image" style="width:220px; margin-right:50px;">
 
-[Click Here to Pre-Order](https://www.bloomsbury.com/us/on-the-job-9781350349391/)
+<div>
+<a src="https://www.bloomsbury.com/us/on-the-job-9781350349391/">Click Here to Pre-Order</a>
+
+<p>Some text about the book can go here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+</div>
+
