@@ -13,10 +13,14 @@ This website is intended as a visual and text-based resource for people with pro
 
 ### Copyright notice
 
-I believe in Open Access scholarship. Many items on this website are in the public domain or free to use under the terms of “Creative Commons, Non-Commercial" licensing (https://creativecommons.org/licenses/by-nc/3.0/). Depending on the use(s) that you have in mind, this may or may not satisfy your needs. 
+I believe in Open Access scholarship. Many items on this website are in the public domain or free to use under the terms of [“Creative Commons, Non-Commercial" licensing](https://creativecommons.org/licenses/by-nc/3.0/). Depending on the use(s) that you have in mind, this may or may not satisfy your needs. 
 
 Please note that some items on this website are still under copyright and are being displayed as “fair use” to encourage scholarship and inspire creative activity. You are welcome to use them for personal, educational, and scholarly purposes, but you are responsible for determining if there are any barriers to commercial use. If you have any complaints, corrections, or questions about any item on this website, please contact the site owner (hakou@iu.edu).
 
 ### Founder and site owner, Heather Akou
 
-This project is an outgrowth of my research including my book, On the Job: A History of American Work Uniforms (forthcoming with Bloomsbury Academic in February 2024). You can read more about my background on my author platform (heatherakou.net) and access many of my publications through ResearchGate (https://www.researchgate.net/profile/Heather-Akou). My current research is about entanglements between military uniforms and non-military dress/fashion, including how military uniforms have inspired subcultures such as militant secret societies, military-style marching bands, military schools, rap artists, and political extremists. 
+This project is an outgrowth of my research including my book, On the Job: A History of American Work Uniforms (forthcoming with Bloomsbury Academic in February 2024). You can read more about my background on my [author platform](heatherakou.net) and access many of my publications through [ResearchGate](https://www.researchgate.net/profile/Heather-Akou). My current research is about entanglements between military uniforms and non-military dress/fashion, including how military uniforms have inspired subcultures such as militant secret societies, military-style marching bands, military schools, rap artists, and political extremists. 
+
+<img src="assets/img/cover.jpg" alt="On the Job Cover Image" style="width:350px">
+
+[Click Here to Pre-Order](https://www.bloomsbury.com/us/on-the-job-9781350349391/)
