@@ -24,8 +24,8 @@ This project is an outgrowth of my research including my book, On the Job: A His
 <div style="display:flex;">
 <img src="assets/img/cover.jpg" alt="On the Job Cover Image" style="width:220px; margin-right:50px;">
 
-<div>
-<a src="https://www.bloomsbury.com/us/on-the-job-9781350349391/">Click Here to Pre-Order</a>
+<div markdown="1">
+[Click Here to Pre-Order](https://www.bloomsbury.com/us/on-the-job-9781350349391/)
 
 <p>Some text about the book can go here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 </div>
