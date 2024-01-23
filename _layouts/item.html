@@ -10,35 +10,44 @@ format: item
 			<!--page-->
 
 {% if item.format == item %}
-		{% capture ItemPath %}{{ ItemID }}{% endcapture %}
-		{% if ItemPath contains 'artifact' %}
-			{% for static_file in site.static_files %}
-				{% if static_file.path contains ItemPath %}
-					{% capture ItemResult %}{{site.baseurl}}{{static_file.path}}{% endcapture %}
-					{% capture divID %}{{ ItemResult | split: "/" | last | split: "." | first }}{% endcapture %}
-					<div class="flexible-article-image-right">
-						<div class="thumbnail" markdown="1" >
-							<button class="button button-img" data-open="{{ divID }}">
-							<img src="{{ ItemResult }}" alt="Click to View Document"/>
-						</div>
-						<div class="large reveal" id="{{ divID }}" data-reveal>
-							<embed src="{{ ItemResult }}" alt="{{ page.title }}">
-							<p><button class="close-button" data-close aria-label="Close modal" type="button">
-							<span aria-hidden="true">&times;</span>
-							  </button></p>
-						</div> 
+	{% capture ItemPath %}{{ ItemID }}{% endcapture %}
+	{% if ItemPath contains 'artifact' %}
+		{% for static_file in site.static_files %}
+			{% if static_file.path contains ItemPath %}
+				{% capture ItemResult %}{{site.baseurl}}{{static_file.path}}{% endcapture %}
+				{% capture divID %}{{ ItemResult | split: "/" | last | split: "." | first }}{% endcapture %}
+				<div class="flexible-article-image-right">
+					<div class="thumbnail" markdown="1" >
+						<button class="button button-img" data-open="{{ divID }}">
+						<img src="{{ ItemResult }}" alt="Click to View Document"/>
 					</div>
-				{% endif %}
-			{% endfor %}
-		{% endif %}
-		{% if ItemPath contains 'reading' %}
-			{% for static_file in site.static_files %}
-				{% if static_file.path contains ItemPath %}
-					{% capture ReadingResult %}{{site.baseurl}}{{static_file.path}}{% endcapture %}
-				{% endif %}
-			{% endfor %}
-		{% endif %}
+					<div class="large reveal" id="{{ divID }}" data-reveal>
+						<embed src="{{ ItemResult }}" alt="{{ page.title }}">
+						<p><button class="close-button" data-close aria-label="Close modal" type="button">
+						<span aria-hidden="true">&times;</span>
+							</button></p>
+					</div>
+					<div class="download">
+						<a href="{{static_file.path}}" download>
+							<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+								<path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+								<path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+							</svg>
+							Download Here
+						</a>
+					</div> 
+				</div>
+			{% endif %}
+		{% endfor %}
 	{% endif %}
+	{% if ItemPath contains 'reading' %}
+		{% for static_file in site.static_files %}
+			{% if static_file.path contains ItemPath %}
+				{% capture ReadingResult %}{{site.baseurl}}{{static_file.path}}{% endcapture %}
+			{% endif %}
+		{% endfor %}
+	{% endif %}
+{% endif %}
 
 {% if page.shortdesc %}
 
