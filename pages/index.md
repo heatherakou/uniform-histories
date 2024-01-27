@@ -5,6 +5,8 @@ permalink: /
 pullquote: ""
 quoteattribution: person
 ---
+
+
 ### Mission Statement
 
 Uniform Histories is a virtual museum focusing on the history of uniforms in the United States. This includes uniforms for work, military service, athletics, and school as well as niches such as prisons, scouting, secret societies, and marching bands. Examples of fashions inspired by uniforms are also welcome; however, uniforms and the uniform industry have some unique features that make them different from fashion. All ages and genders are represented. 

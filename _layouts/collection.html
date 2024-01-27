@@ -7,16 +7,17 @@ format: collection
 {% for item in site.items %}
     {% if item.group == 'artifact' %}{% assign grouplist = grouplist | push: item.group %}{%endif%}
 {% endfor %}
-
 {% assign uniquegroups = grouplist | uniq %}
 
 {% assign grouplist = "" | split: ',' %}
 	{% for item in site.items %}
-		{% if item.categories %}
-			{% for cat in item.categories %}
-				{% assign catdash = cat | replace: " ", "-" %}
-				{% assign grouplist = grouplist | push: catdash %}
-			{% endfor %}
+		{% if item.group == 'artifact' %}
+			{% if item.categories %}
+				{% for cat in item.categories %}
+					{% assign catdash = cat | replace: " ", "-" %}
+					{% assign grouplist = grouplist | push: catdash %}
+				{% endfor %}
+			{% endif %}
 		{%endif%}
 	{% endfor %}
 {% assign uniquetags = grouplist | uniq %}
@@ -29,6 +30,7 @@ format: collection
 	<div class="grid-x grid-padding-x margin-x">
 		<div class="large-12 cell">
 			<div>
+				<small>Filter by Category</small>
 				<div class="button-group round">
 					<button class="button hollow filter-simple-button is-active" data-filter="all">All</button>
 {% for group in uniquetags %}
