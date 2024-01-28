@@ -5,27 +5,29 @@ format: collection
 
 {% assign grouplist = "" | split: ',' %}
 {% for item in site.items %}
-    {% if item.group == 'artifact' %}{% assign grouplist = grouplist | push: item.group %}{%endif%}
+    {% if item.group == 'artifact' %}
+		{% assign grouplist = grouplist | push: item.group %}
+	{%endif%}
 {% endfor %}
 {% assign uniquegroups = grouplist | uniq %}
 
 {% assign grouplist = "" | split: ',' %}
-	{% for item in site.items %}
-		{% if item.group == 'artifact' %}
-			{% if item.categories %}
-				{% for cat in item.categories %}
-					{% assign catdash = cat | replace: " ", "-" %}
-					{% assign grouplist = grouplist | push: catdash %}
-				{% endfor %}
-			{% endif %}
-		{%endif%}
-	{% endfor %}
-{% assign uniquetags = grouplist | uniq %}
+{% for item in site.items %}
+	{% if item.group == 'artifact' %}
+		{% if item.categories %}
+			{% for cat in item.categories %}
+				{% assign catdash = cat | replace: " ", "-" %}
+				{% assign grouplist = grouplist | push: catdash %}
+			{% endfor %}
+		{% endif %}
+	{%endif%}
+{% endfor %}
+{% assign uniquecats = grouplist | uniq %}
 
 </div>
 
 <section class="filter-simple">
-
+	
 <div class="grid-container">
 	<div class="grid-x grid-padding-x margin-x">
 		<div class="large-12 cell">
@@ -33,20 +35,19 @@ format: collection
 				<small>Filter by Category</small>
 				<div class="button-group round">
 					<button class="button hollow filter-simple-button is-active" data-filter="all">All</button>
-{% for group in uniquetags %}
+					{% for group in uniquecats %}
 					<button class="button hollow filter-simple-button" data-filter="{{group}}">{{group | replace: " ", "-"}}</button>
-{% endfor %}
+					{% endfor %}
 				</div>
 			</div>
 
-
-{% for groupset in uniquegroups %}
+	{% for groupset in uniquegroups %}
 		</div>
-	<div class="grid-x grid-padding-x grid-margin-x">
+<div class="grid-x grid-padding-x grid-margin-x">
 
 {% assign itemsGrouped = site.items | where: 'group', groupset %}
 {% for item in itemsGrouped %}
-{% include _itembox.html %}
+	{% include _itembox.html %}
 {% endfor %}
 	</div>
 </div>
