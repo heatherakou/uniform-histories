@@ -81,7 +81,8 @@ format: item
 <tr><td><div id="dublin-core-creator" class="element">Creator</div></td><td><div class="element-text">{{ page.creator }}</div></td></tr>
 <tr><td><div id="dublin-core-contributor" class="element">Contributor</div></td><td><div class="element-text">{{ page.contributor }}</div></td></tr>
 <tr><td><div id="dublin-core-date" class="element">Creation Date</div></td><td><div class="element-text">{{ page.creationdate }}</div></td></tr>
-<tr><td><div id="item-tags" class="element">Tags</div></td><td><div class="element-text">{% for tag in page.tags %} '{{ tag }}'   {% endfor %}</div></td></tr>
+<tr><td><div id="item-tags" class="element">Tags</div></td><td><div class="element-text">{% for tag in page.tags %} '{{ tag }}'  {% endfor %} {% for t in page.time %} '{{ t }}' {% endfor %}</div></td></tr>
+
 </table>
 </div>
 
