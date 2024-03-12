@@ -42,6 +42,25 @@
   }
 }
 
-.accentbg {
-  background-color: transparent;
+
+// READINGS PAGE
+// --------------------------------------------------------------------
+.card-title {
+  border-right: transparent;
+}
+
+.card {
+  border: transparent;
+  border: 0.5px solid #072d34;
+  // border-top: 1px solid #072d34;
+  // border-left: 1px solid #072d34;
+  // background-color: $middle-blue;
+  padding: 0 1.0rem;
+  margin: 2.0rem 0;
+  .accentbg {
+    background-color: transparent;
+  }
+  p {
+    margin-bottom: 0.5rem;
+  }
 }

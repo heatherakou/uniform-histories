@@ -26,7 +26,7 @@ format: stories
 <div class="grid-container">
 	<!-- <div class="grid-x grid-padding-x margin-x"> -->
 		<div class="large-12 cell">
-			<div>
+			<!-- <div> -->
 				<small>Filter by Cetegory</small>
 				<div class="button-group round">
 					<button class="button filter-simple-button is-active" data-filter="all">All</button>
@@ -34,18 +34,18 @@ format: stories
 						<button class="button filter-simple-button" data-filter="{{group}}">{{group | replace: " ", "-"}}</button>
 					{% endfor %}
 				</div>
-			</div>
+			<!-- </div> -->
 
 
 			{% for groupset in uniquegroups %}
 		</div>
-		<div class="grid-x grid-padding-x grid-margin-x">
+		<!-- <div class="grid-x grid-padding-x grid-margin-x"> -->
 
 			{% assign itemsGrouped = site.items | where: 'group', groupset %}
 			{% for item in itemsGrouped %}
 			{% include _readingbox.html %}
 			{% endfor %}
-		</div>	
+		<!-- </div>	 -->
 	<!-- </div> -->
 	<div class="grid-container">
 		<div class="large-12 cell">
