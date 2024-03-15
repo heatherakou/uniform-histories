@@ -78,12 +78,15 @@
 
 // FILTERS
 // --------------------------------------------------------------------
-.button {
-  background-color: $middle-blue;
-  color: $teal-blue;
-}
-
-.button:hover, .button:focus {
-  background-color: $teal-blue;
-  color: $middle-blue;
+.button-group {
+  .button {
+    background-color: $middle-blue;
+    color: $teal-blue;
+    margin: 0.5rem 0.5rem 0 0;
+  }
+  
+  .button:hover, .button:focus {
+    background-color: $teal-blue;
+    color: $middle-blue;
+  }
 }
