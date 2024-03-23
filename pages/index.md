@@ -5,7 +5,7 @@ permalink: /
 pullquote: ""
 quoteattribution: person
 ---
-
+<img src="assets/img/header.png" alt="Hero image, cropped from cover of Industrial Uniform Co. Catalogue, circa 1960." style="">
 
 ### Mission Statement
 
