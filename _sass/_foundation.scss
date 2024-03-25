@@ -6,7 +6,7 @@
  * Licensed under MIT Open Source
  */
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: 50em) {
   .reveal, .reveal.tiny, .reveal.small, .reveal.large {
     right: auto;
     left: auto;
@@ -3403,7 +3403,8 @@ select {
     padding-left: 3rem; }
 
 .close-button {
-  position: absolute;
+  position: sticky;
+  left: 10px;
   z-index: 10;
   color: #8a8a8a;
   cursor: pointer; }
@@ -3412,13 +3413,13 @@ select {
   .close-button:hover, .close-button:focus {
     color: #0a0a0a; }
   .close-button.small {
-    right: 0.66rem;
-    top: 0.33em;
+    right: 1rem;
+    top: 1em;
     font-size: 1.5em;
     line-height: 1; }
   .close-button, .close-button.medium {
     right: 1rem;
-    top: .5rem;
+    top: 1rem;
     font-size: 2em;
     line-height: 1; }
 
