@@ -56,22 +56,22 @@
 
 // READINGS PAGE
 // --------------------------------------------------------------------
-.reading {
+.reading.card {
+  border: transparent;
+  border-top: 1px solid #072d34;
+  padding: 0 1.0rem;
+  margin: 2.0rem 0;
+  
   .card-title {
     border-right: transparent;
   }
-  
-  .card {
-    border: transparent;
-    border-top: 1px solid #072d34;
-    padding: 0 1.0rem;
-    margin: 2.0rem 0;
-    .accentbg {
-      background-color: transparent;
-    }
-    p {
-      margin-bottom: 0.5rem;
-    }
+
+  .accentbg {
+    background-color: transparent;
+  }
+
+  p {
+    margin-bottom: 0.5rem;
   }
 }
 
