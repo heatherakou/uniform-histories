@@ -54,23 +54,49 @@
   }
 }
 
-// READINGS PAGE
+// ARTIFACTS PAGE
 // --------------------------------------------------------------------
-.card-title {
-  border-right: transparent;
+.artifacts {
+  .cell {
+    width: 300px;
+    margin: 1rem 5rem 1rem 0;
+    padding: 0;
+  }
+
+  .card{
+    background-color: transparent;
+    border: transparent;
+
+    a {
+      color: $teal-blue;
+    }
+
+    a:hover {
+      color: $orange-peel;
+    }
+  }
+  
+  .grid-margin-x {
+    margin-left: 0;
+  }
 }
 
-.card {
+// READINGS PAGE
+// --------------------------------------------------------------------
+.reading.card {
   border: transparent;
-  border: 0.5px solid #072d34;
-  // border-top: 1px solid #072d34;
-  // border-left: 1px solid #072d34;
-  // background-color: $middle-blue;
+  border-top: 1px solid #072d34;
   padding: 0 1.0rem;
   margin: 2.0rem 0;
-  // .accentbg {
-  //   background-color: transparent;
-  // }
+  
+  .card-title {
+    border-right: transparent;
+  }
+
+  .accentbg {
+    background-color: transparent;
+  }
+
   p {
     margin-bottom: 0.5rem;
   }
