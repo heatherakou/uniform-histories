@@ -3,7 +3,7 @@ layout: page
 format: collection
 ---
 
-{% assign grouplist = "" | split: ',' %}
+<!-- {% assign grouplist = "" | split: ',' %}
 {% for item in site.items %}
     {% if item.group == 'artifact' %}
 		{% assign grouplist = grouplist | push: item.group %}
@@ -22,13 +22,15 @@ format: collection
 		{% endif %}
 	{%endif%}
 {% endfor %}
-{% assign uniquecats = grouplist | uniq %}
+{% assign uniquecats = grouplist | uniq %} -->
+
 
 <section class="filter-simple">
+	{% include _itemlist.html %}
 	
 	<div class="grid-container">
 		<!-- <div class="grid-x grid-padding-x margin-x"> -->
-			<div class="large-12 cell">
+			<!-- <div class="large-12 cell">
 				<div>
 					<small>Filter by Category</small>
 					<div class="button-group round">
@@ -40,7 +42,7 @@ format: collection
 				</div>
 
 				{% for groupset in uniquegroups %}
-			</div>
+			</div> -->
 
 			<div class="artifacts">
 			<div class="grid-x grid-padding-x grid-margin-x">
