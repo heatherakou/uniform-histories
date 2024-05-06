@@ -58,9 +58,10 @@
 // --------------------------------------------------------------------
 .artifacts {
   .cell {
-    width: 300px;
-    height: 390px;
-    margin: 1rem 5rem 1rem 0;
+    min-width: 200px;
+    max-width: 300px;
+    height: 405px;
+    margin: 1rem 1rem 1rem 1rem;
     padding: 0;
   }
 
@@ -69,9 +70,12 @@
     border: transparent;
 
     .thumbnail{
-      height: 300px;
+      height: 310px;
+      min-width: 300px;
+      max-width: 300px;
+      align-items: center;
     }
-
+    
     a {
       color: $teal-blue;
     }
@@ -86,7 +90,7 @@
   }
   
   .grid-margin-x {
-    margin-left: 0;
+    margin-left: 1%;
   }
 }
 
